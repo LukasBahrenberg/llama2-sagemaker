@@ -6,6 +6,8 @@ import sagemaker
 import boto3
 from sagemaker.huggingface import HuggingFaceModel, get_huggingface_llm_image_uri
 
+sagemaker.Session(boto3.session.Session())
+
 try:
 	role = sagemaker.get_execution_role()
 except ValueError:
