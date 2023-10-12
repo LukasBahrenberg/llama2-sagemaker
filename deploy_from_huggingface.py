@@ -38,6 +38,11 @@ predictor = huggingface_model.deploy(
   )
   
 # send request
-predictor.predict({
+output = predictor.predict({
 	"inputs": "My name is Julien and I like to",
 })
+
+print(output)
+
+# delete endpoint
+predictor.delete_endpoint()
